@@ -4,7 +4,7 @@
       android:versionCode="1"
       android:versionName="1.0">
     <application android:icon="@drawable/icon" android:label="Droids">
-        <activity android:name=".view.DroidsGame"
+        <activity android:name="org.titres.titres.view.TitrominosGame"
                   android:label="Titres"
                   android:configChanges="keyboard|keyboardHidden|orientation"
                   android:screenOrientation="portrait">
