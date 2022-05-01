@@ -22,28 +22,19 @@ import org.androidforfun.framework.Music;
 import org.androidforfun.framework.Pixmap;
 import org.androidforfun.framework.Sound;
 
-/*
- * This class contains the global references to all the assets used in DroidsWorld game.
- *
- * @author Salvatore D'Angelo
- */
 public class Assets {
-    // the logo asset
     public static Pixmap logo;
 
-    // the screen used in DroidsWorld game
     public static Pixmap gamescreen;
     public static Pixmap startscreen;
     public static Pixmap highscoresscreen;
     public static Pixmap gameoverscreen;
 
-    // the menu used in DroidsWorld game
     public static Pixmap mainmenu;
     public static Pixmap pausemenu;
     public static Pixmap readymenu;
 
-    // these are the colored block to draw the DroidsWorld shape. Each shape is composed by 4 blocks
-    // of same colors. Each shape has a different color.
+
     public static Pixmap redblock;
     public static Pixmap greenblock;
     public static Pixmap blueblock;
@@ -52,7 +43,6 @@ public class Assets {
     public static Pixmap magentablock;
     public static Pixmap orangeblock;
 
-    // these are the colored block to draw the DroidsWorld next shape.
     public static Pixmap smallredblock;
     public static Pixmap smallgreenblock;
     public static Pixmap smallblueblock;
@@ -61,15 +51,12 @@ public class Assets {
     public static Pixmap smallmagentablock;
     public static Pixmap smallorangeblock;
 
-    // buttons and numbers
     public static Pixmap buttons;
     public static Pixmap numbers;
 
-    // sounds
     public static Sound click;
     public static Sound bitten;
 
-    // music
     public static Music music;
 
     public static Pixmap getBlockByColor(int color) {

@@ -1,21 +1,4 @@
-/*
- *  Copyright (C) 2016 Salvatore D'Angelo
- *  This file is part of Droids project.
- *  This file derives from the Mr Nom project developed by Mario Zechner for the Beginning Android
- *  Games book (chapter 6).
- *
- *  Droids is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Droids is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License.
- */
+
 package org.androidforfun.droids.view;
 
 import android.util.Log;
@@ -33,18 +16,6 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-/*
- * This class represents the game screen. The processing and rendering depends on the game state managed
- * by State pattern. The update and draw method are delegated to:
- *    GamePause.update, GamePause.draw
- *    GameReady.update, GameReady.draw
- *    GameRunning.update, GameRunning.draw
- *    GameOver.update, GameOver.draw
- *
- * depending on the status of the game.
- *
- * @author Salvatore D'Angelo
- */
 public class GameScreen implements Screen {
     private static final String LOG_TAG = "Droids.GameScreen";
 
@@ -96,15 +67,6 @@ public class GameScreen implements Screen {
         renderer = new DroidsWorldRenderer();
     }
 
-    /*
-     * The update method is delegated to:
-     *    GamePause.update
-     *    GameReady.update
-     *    GameRunning.update
-     *    GameOver.update
-     *
-     * depending on the status of the game.
-     */
     public void update(float deltaTime) {
         Log.i(LOG_TAG, "update -- begin");
         List<TouchEvent> touchEvents = Gdx.input.getTouchEvents();
@@ -112,22 +74,10 @@ public class GameScreen implements Screen {
         states.get(DroidsWorld.getInstance().getState()).update(touchEvents, deltaTime);
     }
 
-    /*
-     * The draw method is delegated to:
-     *    GamePause.draw
-     *    GameReady.draw
-     *    GameRunning.draw
-     *    GameOver.draw
-     *
-     * depending on the status of the game.
-     */
     public void draw(float deltaTime) {
         Log.i(LOG_TAG, "draw -- begin");
-        // draw the background
         Gdx.graphics.drawPixmap(Assets.gamescreen, gameScreenBounds.getX(), gameScreenBounds.getY());
-        // render the game world.
         renderer.draw();
-        // draw buttons
         Gdx.graphics.drawPixmap(Assets.buttons, leftButtonBounds.getX(), leftButtonBounds.getY(), 50, 50,
                 leftButtonBounds.getWidth()+1, leftButtonBounds.getHeight()+1);  // left button
         Gdx.graphics.drawPixmap(Assets.buttons, rightButtonBounds.getX(), rightButtonBounds.getY(), 0, 50,
@@ -137,22 +87,17 @@ public class GameScreen implements Screen {
         Gdx.graphics.drawPixmap(Assets.buttons, downButtonBounds.getX(), downButtonBounds.getY(), 0, 150,
                 downButtonBounds.getWidth()+1, downButtonBounds.getHeight()+1); // down button
 
-        // draw the goal, score and level.
         TextStyle style = new TextStyle();
         style.setColor(0xffffffff);
         style.setTextSize(10);
         style.setAlign(TextStyle.Align.CENTER);
-//        Gdx.graphics.drawText("" + DroidsWorld.getInstance().getLevel(), 30 + leftRegion.getX(), 165 + leftRegion.getY(), style);
-//        Gdx.graphics.drawText("" + DroidsWorld.getInstance().getGoal(), 30 + leftRegion.getX(), 265 + leftRegion.getY(), style);
+
         Gdx.graphics.drawText("" + DroidsWorld.getInstance().getScore(), 30 + rightRegion.getX(), 265 + rightRegion.getY(), style);
 
-        // draw the state specific element
         states.get(DroidsWorld.getInstance().getState()).draw();
     }
 
-    /*
-     * Draw text on the screen in the (x, y) position.
-     */
+
     public void drawText(String text, int x, int y) {
         Log.i(LOG_TAG, "drawText -- begin");
         int len = text.length();
@@ -179,9 +124,7 @@ public class GameScreen implements Screen {
         }
     }
 
-    /*
-     * The screen is paused.
-     */
+
     public void pause() {
         Log.i(LOG_TAG, "pause -- begin");
 
@@ -194,26 +137,14 @@ public class GameScreen implements Screen {
         }
     }
 
-    /*
-     * The abstract class representing a generic State. Used to implement the State pattern.
-     */
+
     abstract class GameState {
         abstract void update(List<TouchEvent> touchEvents, float deltaTime);
         abstract void draw();
     }
 
-    /*
-     * This class represents the game screen in running state. It will be responsible to update and
-     * draw when the game is running.
-     *
-     * @author Salvatore D'Angelo
-     */
     class GameRunning extends GameState {
-        /*
-         * Update the game when it is in running state. The method catch the user input and,
-         * depending on it will move, rotate or accelerate the falling shape. It can also pause the
-         * game and check for game over.
-         */
+
         void update(List<TouchEvent> touchEvents, float deltaTime) {
             Log.i(LOG_TAG, "GameRunning.update -- begin");
             int len = touchEvents.size();
@@ -229,25 +160,21 @@ public class GameScreen implements Screen {
                         }
                         break;
                     case TouchEvent.TOUCH_DOWN:
-                        // Move falling shape on the left, if possible
                         if(leftButtonBounds.contains(event.x, event.y)) {
                             DroidsWorld.getInstance().getFallingShape().moveLeft();
                             if (DroidsWorld.getInstance().getFallingShape().collide())
                                 DroidsWorld.getInstance().getFallingShape().moveRight();
                         }
-                        // Move falling shape on the right, if possible
                         if(rightButtonBounds.contains(event.x, event.y)) {
                             DroidsWorld.getInstance().getFallingShape().moveRight();
                             if (DroidsWorld.getInstance().getFallingShape().collide())
                                 DroidsWorld.getInstance().getFallingShape().moveLeft();
                         }
-                        // Rotate falling shape, if possible
                         if(rotateButtonBounds.contains(event.x, event.y)) {
                             DroidsWorld.getInstance().getFallingShape().rotate();
                             if (DroidsWorld.getInstance().getFallingShape().collide())
                                 DroidsWorld.getInstance().getFallingShape().undoRotate();
                         }
-                        // Accelerate falling of the falling shape
                         if(downButtonBounds.contains(event.x, event.y)) {
                             DroidsWorld.getInstance().getFallingShape().accelerateFalling();
                         }
@@ -267,9 +194,7 @@ public class GameScreen implements Screen {
             }
         }
 
-        /*
-         * Draw the game in running state.
-         */
+
         void draw() {
             Log.i(LOG_TAG, "GameRunning.draw -- begin");
             Gdx.graphics.drawPixmap(Assets.buttons, pauseButtonBounds.getX(), pauseButtonBounds.getY(), 50, 100,
@@ -277,21 +202,12 @@ public class GameScreen implements Screen {
         }
     }
 
-    /*
-     * This class represents the game screen in pause state. It will be responsible to update and
-     * draw when the game is paused.
-     *
-     * @author Salvatore D'Angelo
-     */
+
     class GamePaused extends GameState {
-        /*
-         * Update the game when it is in paused state. The method catch the user input and
-         * depending on it will resume the game or return to the start screen.
-         */
+
         void update(List<TouchEvent> touchEvents, float deltaTime) {
             Log.i(LOG_TAG, "GamePaused.update -- begin");
 
-            // Check if user asked to resume the game or come back to the start screen.
             int len = touchEvents.size();
             for(int i = 0; i < len; i++) {
                 TouchEvent event = touchEvents.get(i);
@@ -310,67 +226,42 @@ public class GameScreen implements Screen {
                     }
                 }
             }
-            // pause the music if it is playing.
             if(Settings.soundEnabled)
                 if (Assets.music.isPlaying())
                     Assets.music.pause();
         }
 
-        /*
-         * Draw the game in paused state.
-         */
         void draw() {
             Log.i(LOG_TAG, "GamePaused.draw -- begin");
-            // draw the pause menu
             Gdx.graphics.drawPixmap(Assets.pausemenu, pauseMenuBounds.getX(), pauseMenuBounds.getY());
         }
     }
 
-    /*
-     * This class represents the game screen in ready state. It will be responsible to update and
-     * draw when the game is ready.
-     *
-     * @author Salvatore D'Angelo
-     */
+
     class GameReady extends GameState {
-        /*
-         * Update the game when it is in ready state. The method catch the user input and
-         * resume the game.
-         */
+
         void update(List<TouchEvent> touchEvents, float deltaTime) {
             Log.i(LOG_TAG, "GameReady.update -- begin");
             if(touchEvents.size() > 0)
                 DroidsWorld.getInstance().setState(DroidsWorld.GameState.Running);
         }
 
-        /*
-         * Draw the game in ready state.
-         */
+
         void draw() {
             Log.i(LOG_TAG, "GameReady.draw -- begin");
             Graphics g = Gdx.graphics;
 
             g.drawPixmap(Assets.buttons, pauseButtonBounds.getX(), pauseButtonBounds.getY(), 50, 100,
                     pauseButtonBounds.getWidth()+1, pauseButtonBounds.getHeight()+1); // pause button
-            // draw the ready menu
             g.drawPixmap(Assets.readymenu, readyMenuBounds.getX(), readyMenuBounds.getY());
         }
     }
 
-    /*
-     * This class represents the game screen when it is over. It will be responsible to update and
-     * draw when the game is over.
-     *
-     * @author Salvatore D'Angelo
-     */
+
     class GameOver extends GameState {
-        /*
-         * Update the game when it is over. The method catch the user input and return to the
-         * start screen.
-         */
+
         void update(List<TouchEvent> touchEvents, float deltaTime) {
             Log.i(LOG_TAG, "GameOver.update -- begin");
-            // check if the x button is pressed.
             int len = touchEvents.size();
             for(int i = 0; i < len; i++) {
                 TouchEvent event = touchEvents.get(i);
@@ -384,40 +275,28 @@ public class GameScreen implements Screen {
                     }
                 }
             }
-            // pause the music if it is playing.
             if(Settings.soundEnabled)
                 if (Assets.music.isPlaying())
                     Assets.music.stop();
         }
 
-        /*
-         * Draw the game when it is over.
-         */
         void draw() {
             Log.i(LOG_TAG, "GameOver.draw -- begin");
             Graphics g = Gdx.graphics;
 
-            // pause button
             Gdx.graphics.drawPixmap(Assets.buttons, pauseButtonBounds.getX(), pauseButtonBounds.getY(), 50, 100,
                     pauseButtonBounds.getWidth()+1, pauseButtonBounds.getHeight()+1); // pause button
-            // draw game over transparent black background
             g.drawPixmap(Assets.gameoverscreen, gameoverScreenBounds.getX(), gameoverScreenBounds.getY());
-            // draw the X button
             g.drawPixmap(Assets.buttons, xButtonBounds.getX(), xButtonBounds.getY(), 0, 100,
                     xButtonBounds.getWidth()+1, xButtonBounds.getHeight()+1); // down button
             drawText("" + DroidsWorld.getInstance().getScore(), 180, 280);
         }
     }
 
-    /*
-     * The screen is resumed.
-     */
+
     public void resume() {
     }
 
-    /*
-     * The screen is disposed.
-     */
     public void dispose() {
     }
 
