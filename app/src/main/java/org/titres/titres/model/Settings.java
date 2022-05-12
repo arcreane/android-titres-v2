@@ -17,7 +17,7 @@ public class Settings {
     public static void load(FileIO files) {
         BufferedReader in = null;
         try {
-            in = new BufferedReader(new InputStreamReader(files.readFile(".droids")));
+            in = new BufferedReader(new InputStreamReader(files.readFile(".titres")));
             soundEnabled = Boolean.parseBoolean(in.readLine());
             for (int i = 0; i < 5; i++) {
                 highscores[i] = Integer.parseInt(in.readLine());
@@ -36,7 +36,7 @@ public class Settings {
     public static void save(FileIO files) {
         BufferedWriter out = null;
         try {
-            out = new BufferedWriter(new OutputStreamWriter(files.writeFile(".droids")));
+            out = new BufferedWriter(new OutputStreamWriter(files.writeFile(".titres")));
             out.write(Boolean.toString(soundEnabled));
             out.write("\n");
             for (int i = 0; i < 5; i++) {

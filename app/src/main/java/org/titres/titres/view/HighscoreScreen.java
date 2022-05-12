@@ -10,13 +10,14 @@ import org.titres.framework.Screen;
 
 import java.util.List;
 
-
+//screen du classement des meilleurs scores
 public class HighscoreScreen implements Screen {
     private Rectangle backgroundBounds;
     private Rectangle backButtonBounds;
 
     String lines[] = new String[5];
 
+    //Zones du background et bouton pour revenir en arrière
     public HighscoreScreen() {
         for (int i = 0; i < 5; i++) {
             lines[i] = "" + (i + 1) + ". " + Settings.highscores[i];
@@ -26,6 +27,7 @@ public class HighscoreScreen implements Screen {
         backButtonBounds=new Rectangle(32, 370, 50, 50);
     }
 
+    //update du screen quand on clique sur un bouton
     public void update(float deltaTime) {
         List<TouchEvent> touchEvents = Gdx.input.getTouchEvents();
         Gdx.input.getKeyEvents();
@@ -43,7 +45,7 @@ public class HighscoreScreen implements Screen {
             }
         }
     }
-
+    //Dessin des assets
     public void draw(float deltaTime) {
         Graphics g = Gdx.graphics;
 
@@ -57,6 +59,7 @@ public class HighscoreScreen implements Screen {
                 backButtonBounds.getWidth()+1, backButtonBounds.getHeight()+1);
     }
 
+    //Dessin des textes
     public void drawText(Graphics g, String line, int x, int y) {
         int len = line.length();
         for (int i = 0; i < len; i++) {

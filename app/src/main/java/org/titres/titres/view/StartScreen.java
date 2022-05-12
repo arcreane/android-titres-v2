@@ -20,6 +20,7 @@ public class StartScreen implements Screen {
     private Rectangle highscoresMenuBounds;
     private Rectangle quitMenuBounds;
 
+    //Assets de l'écran du début
     public StartScreen() {
         backgroundBounds=new Rectangle(0, 0, 320, 480);
         logoBounds=new Rectangle(32, 20, 256, 160);
@@ -30,6 +31,7 @@ public class StartScreen implements Screen {
         quitMenuBounds=new Rectangle(64, 220 + 84, 192, 42);
     }
 
+    //update selon les évènements
     public void update(float deltaTime) {
         List<Input.TouchEvent> touchEvents = Gdx.input.getTouchEvents();
 
@@ -65,6 +67,7 @@ public class StartScreen implements Screen {
         }
     }
 
+    //Dessin des assets (boutons, ...)
     public void draw(float deltaTime) {
         Graphics g = Gdx.graphics;
 

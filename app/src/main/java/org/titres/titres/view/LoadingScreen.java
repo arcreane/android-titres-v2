@@ -10,7 +10,7 @@ import org.titres.framework.Screen;
 import org.titres.titres.model.Settings;
 
 public class LoadingScreen implements Screen {
-    private static final String LOG_TAG = "Droids.LoadingScreen";
+    private static final String LOG_TAG = "Titres.LoadingScreen";
 
     @Override
     public void update(float deltaTime) {

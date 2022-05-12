@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GameScreen implements Screen {
-    private static final String LOG_TAG = "Droids.GameScreen";
+    private static final String LOG_TAG = "Titres.GameScreen";
 
     private Map<TitrominosWorld.GameState, GameState> states = new EnumMap<>(TitrominosWorld.GameState.class);
     private Rectangle leftRegion;
@@ -39,6 +39,7 @@ public class GameScreen implements Screen {
 
     private TitrominosWorldRenderer renderer;
 
+    //screen du jeu avec les différents boutons, assets, screens et les régions ou se passe le jeu (zone ou on controle le jeu)
     public GameScreen() {
         Log.i(LOG_TAG, "constructor -- begin");
 
@@ -46,27 +47,29 @@ public class GameScreen implements Screen {
         states.put(TitrominosWorld.GameState.Ready, new GameReady());
         states.put(TitrominosWorld.GameState.Running, new GameRunning());
         states.put(TitrominosWorld.GameState.GameOver, new GameOver());
-
+        //zone du jeu
         leftRegion = new Rectangle(0, 0, 60, 400);
         workingRegion = new Rectangle(60, 20, 200, 400);
         rightRegion = new Rectangle(260, 0, 60, 400);
         commandRegion = new Rectangle(0, 400, 320, 80);
 
-        gameoverScreenBounds=new Rectangle(0, 0, 320, 480);
-        gameScreenBounds=new Rectangle(0, 0, 320, 480);
-        pauseButtonBounds=new Rectangle(5, 20, 50, 50);
-        leftButtonBounds=new Rectangle(30, 425, 50, 50);
-        rightButtonBounds=new Rectangle(240, 425, 50, 50);
-        rotateButtonBounds=new Rectangle(100, 425, 50, 50);
-        downButtonBounds=new Rectangle(170, 425, 50, 50);
-        pauseMenuBounds=new Rectangle(100, 100, 160, 48);
-        readyMenuBounds=new Rectangle(65, 100, 188, 70);
-        homeMenuBounds=new Rectangle(80, 148, 160, 48);
-        xButtonBounds=new Rectangle(128, 200, 50, 50);
+        //placement des assets
+        gameoverScreenBounds = new Rectangle(0, 0, 320, 480);
+        gameScreenBounds = new Rectangle(0, 0, 320, 480);
+        pauseButtonBounds = new Rectangle(5, 20, 50, 50);
+        leftButtonBounds = new Rectangle(30, 425, 50, 50);
+        rightButtonBounds = new Rectangle(240, 425, 50, 50);
+        rotateButtonBounds = new Rectangle(100, 425, 50, 50);
+        downButtonBounds = new Rectangle(170, 425, 50, 50);
+        pauseMenuBounds = new Rectangle(100, 100, 160, 48);
+        readyMenuBounds = new Rectangle(65, 100, 188, 70);
+        homeMenuBounds = new Rectangle(80, 148, 160, 48);
+        xButtonBounds = new Rectangle(128, 200, 50, 50);
 
         renderer = new TitrominosWorldRenderer();
     }
 
+    //update des titrominos quand ils bougent
     public void update(float deltaTime) {
         Log.i(LOG_TAG, "update -- begin");
         List<TouchEvent> touchEvents = Gdx.input.getTouchEvents();
@@ -74,6 +77,7 @@ public class GameScreen implements Screen {
         states.get(TitrominosWorld.getInstance().getState()).update(touchEvents, deltaTime);
     }
 
+    //Dessins des boutons
     public void draw(float deltaTime) {
         Log.i(LOG_TAG, "draw -- begin");
         Gdx.graphics.drawPixmap(Assets.gamescreen, gameScreenBounds.getX(), gameScreenBounds.getY());
@@ -98,6 +102,7 @@ public class GameScreen implements Screen {
     }
 
 
+    //Dessins des textes
     public void drawText(String text, int x, int y) {
         Log.i(LOG_TAG, "drawText -- begin");
         int len = text.length();
@@ -125,6 +130,7 @@ public class GameScreen implements Screen {
     }
 
 
+    //mise en pause du jeu
     public void pause() {
         Log.i(LOG_TAG, "pause -- begin");
 
@@ -142,7 +148,7 @@ public class GameScreen implements Screen {
         abstract void update(List<TouchEvent> touchEvents, float deltaTime);
         abstract void draw();
     }
-
+    //mise en route du jeu
     class GameRunning extends GameState {
 
         void update(List<TouchEvent> touchEvents, float deltaTime) {
@@ -202,7 +208,7 @@ public class GameScreen implements Screen {
         }
     }
 
-
+    //jeu en pause
     class GamePaused extends GameState {
 
         void update(List<TouchEvent> touchEvents, float deltaTime) {
@@ -237,7 +243,7 @@ public class GameScreen implements Screen {
         }
     }
 
-
+    //Reprise du jeu
     class GameReady extends GameState {
 
         void update(List<TouchEvent> touchEvents, float deltaTime) {
@@ -257,7 +263,7 @@ public class GameScreen implements Screen {
         }
     }
 
-
+    //Fin du jeu
     class GameOver extends GameState {
 
         void update(List<TouchEvent> touchEvents, float deltaTime) {
