@@ -1,0 +1,226 @@
+Index: Droids.iml
+===================================================================
+diff --git a/Droids.iml b/Droids.iml
+deleted file mode 100644
+--- a/Droids.iml	(revision c64b30019dd52307aa756ac9013be9f2b6ab3c9e)
++++ /dev/null	(revision c64b30019dd52307aa756ac9013be9f2b6ab3c9e)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.id="Droids" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+-  <component name="FacetManager">
+-    <facet type="java-gradle" name="Java-Gradle">
+-      <configuration>
+-        <option name="BUILDABLE" value="false" />
+-      </configuration>
+-    </facet>
+-  </component>
+-  <component name="NewModuleRootManager">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+-      <excludeFolder url="file://$MODULE_DIR$/build" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/modules/app/Droids.app.iml
+===================================================================
+diff --git a/.idea/modules/app/Droids.app.iml b/.idea/modules/app/Droids.app.iml
+deleted file mode 100644
+--- a/.idea/modules/app/Droids.app.iml	(revision c64b30019dd52307aa756ac9013be9f2b6ab3c9e)
++++ /dev/null	(revision c64b30019dd52307aa756ac9013be9f2b6ab3c9e)
+@@ -1,48 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module external.linked.project.id=":app" external.linked.project.path="$MODULE_DIR$/../../../app" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="Droids" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+-  <component name="FacetManager">
+-    <facet type="android-gradle" name="Android-Gradle">
+-      <configuration>
+-        <option name="GRADLE_PROJECT_PATH" value=":app" />
+-        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" value="3.1.4" />
+-        <option name="LAST_KNOWN_AGP_VERSION" value="3.1.4" />
+-      </configuration>
+-    </facet>
+-    <facet type="android" name="Android">
+-      <configuration>
+-        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+-        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+-        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+-        <afterSyncTasks>
+-          <task>generateDebugSources</task>
+-        </afterSyncTasks>
+-        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+-        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+-        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/main/res;file://$MODULE_DIR$/../../../app/src/debug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" />
+-        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/androidTest/res;file://$MODULE_DIR$/../../../app/src/androidTestDebug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" />
+-        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+-      </configuration>
+-    </facet>
+-  </component>
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
+-    <output url="file://$MODULE_DIR$/../../../app/build/intermediates/classes/debug" />
+-    <output-test url="file://$MODULE_DIR$/../../../app/build/intermediates/classes/test/debug" />
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$/../../../app">
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/assets" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/java" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/res" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug" type="java-resource" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/aidl/debug" isTestSource="false" generated="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/apt/debug" isTestSource="false" generated="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+-      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/rs/debug" isTestSource="false" generated="true" />
+-      <excludeFolder url="file://$MODULE_DIR$/../../../app/.gradle" />
+-      <excludeFolder url="file://$MODULE_DIR$/../../../app/build" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"RemoteRepositoriesConfiguration\">\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"central\" />\r\n      <option name=\"name\" value=\"Maven Central repository\" />\r\n      <option name=\"url\" value=\"https://repo1.maven.org/maven2\" />\r\n    </remote-repository>\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"jboss.community\" />\r\n      <option name=\"name\" value=\"JBoss Community repository\" />\r\n      <option name=\"url\" value=\"https://repository.jboss.org/nexus/content/repositories/public/\" />\r\n    </remote-repository>\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"BintrayJCenter\" />\r\n      <option name=\"name\" value=\"BintrayJCenter\" />\r\n      <option name=\"url\" value=\"https://jcenter.bintray.com/\" />\r\n    </remote-repository>\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"$USER_HOME$/Library/Android/sdk/extras/android/m2repository\" />\r\n      <option name=\"name\" value=\"$USER_HOME$/Library/Android/sdk/extras/android/m2repository\" />\r\n      <option name=\"url\" value=\"file:$USER_HOME$/Library/Android/sdk/extras/android/m2repository\" />\r\n    </remote-repository>\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"$USER_HOME$/Library/Android/sdk/extras/m2repository\" />\r\n      <option name=\"name\" value=\"$USER_HOME$/Library/Android/sdk/extras/m2repository\" />\r\n      <option name=\"url\" value=\"file:$USER_HOME$/Library/Android/sdk/extras/m2repository\" />\r\n    </remote-repository>\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"$USER_HOME$/Library/Android/sdk/extras/google/m2repository\" />\r\n      <option name=\"name\" value=\"$USER_HOME$/Library/Android/sdk/extras/google/m2repository\" />\r\n      <option name=\"url\" value=\"file:$USER_HOME$/Library/Android/sdk/extras/google/m2repository\" />\r\n    </remote-repository>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+--- a/.idea/jarRepositories.xml	(revision c64b30019dd52307aa756ac9013be9f2b6ab3c9e)
++++ b/.idea/jarRepositories.xml	(date 1649945217846)
+@@ -31,5 +31,20 @@
+       <option name="name" value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository" />
+       <option name="url" value="file:$USER_HOME$/Library/Android/sdk/extras/google/m2repository" />
+     </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\paulb\AppData\Local\Android\Sdk\extras\google\m2repository" />
++      <option name="name" value="C:\Users\paulb\AppData\Local\Android\Sdk\extras\google\m2repository" />
++      <option name="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/extras/google/m2repository" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\paulb\AppData\Local\Android\Sdk\extras\m2repository" />
++      <option name="name" value="C:\Users\paulb\AppData\Local\Android\Sdk\extras\m2repository" />
++      <option name="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/extras/m2repository" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="C:\Users\paulb\AppData\Local\Android\Sdk\extras\android\m2repository" />
++      <option name="name" value="C:\Users\paulb\AppData\Local\Android\Sdk\extras\android\m2repository" />
++      <option name="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository" />
++    </remote-repository>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/Droids.iml\" filepath=\"$PROJECT_DIR$/Droids.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Droids.app.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Droids.app.iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	(revision c64b30019dd52307aa756ac9013be9f2b6ab3c9e)
++++ b/.idea/modules.xml	(date 1649945217819)
+@@ -2,8 +2,8 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/Droids.iml" filepath="$PROJECT_DIR$/Droids.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Droids.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Droids.app.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-titres-v2.iml" filepath="$PROJECT_DIR$/.idea/modules/android-titres-v2.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-titres-v2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-titres-v2.app.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/modules/app/android-titres-v2.app.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/app/android-titres-v2.app.iml b/.idea/modules/app/android-titres-v2.app.iml
+new file mode 100644
+--- /dev/null	(date 1649946226627)
++++ b/.idea/modules/app/android-titres-v2.app.iml	(date 1649946226627)
+@@ -0,0 +1,48 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module external.linked.project.id=":app" external.linked.project.path="$MODULE_DIR$/../../../app" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="android-titres-v2" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
++  <component name="FacetManager">
++    <facet type="android-gradle" name="Android-Gradle">
++      <configuration>
++        <option name="GRADLE_PROJECT_PATH" value=":app" />
++        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" />
++        <option name="LAST_KNOWN_AGP_VERSION" value="3.1.4" />
++      </configuration>
++    </facet>
++    <facet type="android" name="Android">
++      <configuration>
++        <option name="SELECTED_BUILD_VARIANT" value="debug" />
++        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
++        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
++        <afterSyncTasks>
++          <task>generateDebugSources</task>
++        </afterSyncTasks>
++        <option name="ALLOW_USER_CONFIGURATION" value="false" />
++        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
++        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
++        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/main/res;file://$MODULE_DIR$/../../../app/src/debug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" />
++        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/androidTest/res;file://$MODULE_DIR$/../../../app/src/androidTestDebug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" />
++        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
++      </configuration>
++    </facet>
++  </component>
++  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
++    <output url="file://$MODULE_DIR$/../../../app/build/intermediates/classes/debug" />
++    <output-test url="file://$MODULE_DIR$/../../../app/build/intermediates/classes/test/debug" />
++    <exclude-output />
++    <content url="file://$MODULE_DIR$/../../../app">
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" type="java-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug" type="java-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/aidl/debug" isTestSource="false" generated="true" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/apt/debug" isTestSource="false" generated="true" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/source/rs/debug" isTestSource="false" generated="true" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/assets" type="java-resource" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/java" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/res" type="java-resource" />
++      <excludeFolder url="file://$MODULE_DIR$/../../../app/.gradle" />
++      <excludeFolder url="file://$MODULE_DIR$/../../../app/build" />
++    </content>
++    <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules/android-titres-v2.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/android-titres-v2.iml b/.idea/modules/android-titres-v2.iml
+new file mode 100644
+--- /dev/null	(date 1649945217804)
++++ b/.idea/modules/android-titres-v2.iml	(date 1649945217804)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module external.linked.project.id="android-titres-v2" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
++  <component name="FacetManager">
++    <facet type="java-gradle" name="Java-Gradle">
++      <configuration>
++        <option name="BUILDABLE" value="false" />
++      </configuration>
++    </facet>
++  </component>
++  <component name="NewModuleRootManager">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$/../..">
++      <excludeFolder url="file://$MODULE_DIR$/../../.gradle" />
++      <excludeFolder url="file://$MODULE_DIR$/../../build" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
