@@ -23,7 +23,7 @@ public class StartScreen implements Screen {
     public StartScreen() {
         backgroundBounds=new Rectangle(0, 0, 320, 480);
         logoBounds=new Rectangle(32, 20, 256, 160);
-        soundButtonBounds=new Rectangle(32, 370, 50, 50);
+        soundButtonBounds=new Rectangle(30, 400, 50, 50);
         mainMenuBounds=new Rectangle(84, 220, 153, 124);
         playMenuBounds=new Rectangle(64, 220, 192, 42);
         highscoresMenuBounds=new Rectangle(64, 220 + 42, 192, 42);

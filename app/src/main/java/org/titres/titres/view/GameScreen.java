@@ -62,7 +62,7 @@ public class GameScreen implements Screen {
         pauseMenuBounds=new Rectangle(100, 100, 160, 48);
         readyMenuBounds=new Rectangle(65, 100, 188, 70);
         homeMenuBounds=new Rectangle(80, 148, 160, 48);
-        xButtonBounds=new Rectangle(128, 200, 50, 50);
+        xButtonBounds=new Rectangle(133, 375, 50, 50);
 
         renderer = new TitrominosWorldRenderer();
     }
