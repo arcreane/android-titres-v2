@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.androidforfun.droids"
+      package="org.androidforfun.titres"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="Droids">
+    <application android:icon="@drawable/icon" android:label="Titres">
         <activity android:name="org.titres.titres.view.TitrominosGame"
                   android:label="Titres"
                   android:configChanges="keyboard|keyboardHidden|orientation"
